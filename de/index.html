@@ -1,6 +1,37 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+<style>
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 180px);
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.gallery img {
+  width: 180px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+}
+</style>
   <meta charset="UTF-8">
   <title>Nature Costa Rica Properties</title>
   <meta name="description" content="Natürliche Grundstücke und Finca-Properties in Costa Rica. Details auf Anfrage. Kontakt über WhatsApp.">
@@ -50,6 +81,19 @@
   WhatsApp: <a href="https://wa.me/4915752871297">Jetzt schreiben</a><br>
   E-Mail: lukasstaerk@gmail.com
 </p>
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img">
+</div>
 
+<script>
+function openLightbox(src) {
+  document.getElementById("lightbox-img").src = src;
+  document.getElementById("lightbox").style.display = "flex";
+}
+
+function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
+}
+</script>
 </body>
 </html>
