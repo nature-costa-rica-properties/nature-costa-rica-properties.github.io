@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <style>
+<style>
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -11,27 +11,11 @@
 
 .gallery img {
   width: 100%;
-  cursor: pointer;
   border-radius: 6px;
 }
+</style>
 
-.lightbox {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.9);
-  justify-content: center;
-  align-items: center;
-}
 
-.lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-}
-
-.lightbox:target {
-  display: flex;
-}
 </style>
   <meta charset="UTF-8">
   <title>Nature Costa Rica Properties</title>
@@ -56,24 +40,15 @@
 <h2>Property Gallery</h2>
 
 <div class="gallery">
-  <a href="#img1"><img src="images/hero1.jpg"></a>
-  <a href="#img2"><img src="images/hero2.jpg"></a>
-  <a href="#img3"><img src="images/hero3.jpg"></a>
-  <a href="#img4"><img src="images/hero4.jpg"></a>
-  <a href="#img5"><img src="images/hero5.jpg"></a>
-  <a href="#img6"><img src="images/hero6.jpg"></a>
-  <a href="#img7"><img src="images/hero7.jpg"></a>
-  <a href="#img8"><img src="images/hero8.jpg"></a>
+  <a href="images/hero1.jpg" target="_blank"><img src="images/hero1.jpg"></a>
+  <a href="images/hero2.jpg" target="_blank"><img src="images/hero2.jpg"></a>
+  <a href="images/hero3.jpg" target="_blank"><img src="images/hero3.jpg"></a>
+  <a href="images/hero4.jpg" target="_blank"><img src="images/hero4.jpg"></a>
+  <a href="images/hero5.jpg" target="_blank"><img src="images/hero5.jpg"></a>
+  <a href="images/hero6.jpg" target="_blank"><img src="images/hero6.jpg"></a>
+  <a href="images/hero7.jpg" target="_blank"><img src="images/hero7.jpg"></a>
+  <a href="images/hero8.jpg" target="_blank"><img src="images/hero8.jpg"></a>
 </div>
-
-<div id="img1" class="lightbox"><img src="images/hero1.jpg"></div>
-<div id="img2" class="lightbox"><img src="images/hero2.jpg"></div>
-<div id="img3" class="lightbox"><img src="images/hero3.jpg"></div>
-<div id="img4" class="lightbox"><img src="images/hero4.jpg"></div>
-<div id="img5" class="lightbox"><img src="images/hero5.jpg"></div>
-<div id="img6" class="lightbox"><img src="images/hero6.jpg"></div>
-<div id="img7" class="lightbox"><img src="images/hero7.jpg"></div>
-<div id="img8" class="lightbox"><img src="images/hero8.jpg"></div>
 <p>
   <a href="https://wa.me/4915752871297" target="_blank">
     Contact us on WhatsApp
