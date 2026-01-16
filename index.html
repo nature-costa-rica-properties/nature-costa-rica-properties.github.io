@@ -4,23 +4,24 @@
 <head>
 <style>
 <style>
-/* Galerie */
+/* Galerie-Raster */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fill, 180px);
+  gap: 14px;
   margin-top: 20px;
 }
 
+/* Vorschau-Bilder */
 .gallery img {
-  width: 100%;
-  aspect-ratio: 4 / 3;   /* ← DAS ist der Schlüssel */
-  object-fit: cover;    /* schneidet statt zu strecken */
+  width: 180px;
+  height: 130px;
+  object-fit: cover;   /* wichtig: nicht strecken */
   border-radius: 6px;
   cursor: pointer;
 }
 
-/* Lightbox Overlay */
+/* Lightbox */
 #lightbox {
   display: none;
   position: fixed;
@@ -35,6 +36,7 @@
   max-width: 90%;
   max-height: 90%;
 }
+</style>
 
 
 </style>
@@ -95,6 +97,16 @@
   WhatsApp: <a href="https://wa.me/4915752871297">Chat now</a><br>
   Email: lukasstaerk998@gmail.com
 </p>
+<script>
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img">
+</div>
+
+<script>
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img">
+</div>
+
 <script>
 function openLightbox(src) {
   document.getElementById("lightbox-img").src = src;
