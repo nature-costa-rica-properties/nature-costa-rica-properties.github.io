@@ -1,6 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<style>
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 180px);
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.gallery img {
+  width: 180px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+}
+</style>
   <meta charset="UTF-8">
   <title>Nature Costa Rica Properties</title>
   <meta name="description" content="Terrenos naturales y propiedades tipo finca en Costa Rica. Información bajo solicitud. Contáctanos por WhatsApp.">
@@ -21,7 +52,18 @@
   Todos los terrenos se tratan de manera personal y están disponibles bajo solicitud,
   incluyendo tamaño, ubicación y detalles individuales.
 </p>
+<h2>Galería</h2>
 
+<div class="gallery">
+  <img src="../images/hero1.jpg" onclick="openLightbox(this.src)">
+  <img src="../images/hero2.jpg" onclick="openLightbox(this.src)">
+  <img src="../images/hero3.jpg" onclick="openLightbox(this.src)">
+  <img src="../images/hero4.jpg" onclick="openLightbox(this.src)">
+  <img src="../images/hero5.jpg" onclick="openLightbox(this.src)">
+  <img src="../images/hero6.jpg" onclick="openLightbox(this.src)">
+  <img src="../images/hero7.jpg" onclick="openLightbox(this.src)">
+  <img src="../images/hero8.jpg" onclick="openLightbox(this.src)">
+</div>
 <p>
   <a href="https://wa.me/4915752871297" target="_blank">
     Contáctanos por WhatsApp
@@ -39,6 +81,19 @@
   WhatsApp: <a href="https://wa.me/4915752871297">Escríbenos ahora</a><br>
   Email: lukasstaerk998@gmail.com
 </p>
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img">
+</div>
 
+<script>
+function openLightbox(src) {
+  document.getElementById("lightbox-img").src = src;
+  document.getElementById("lightbox").style.display = "flex";
+}
+
+function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
+}
+</script>
 </body>
 </html>
