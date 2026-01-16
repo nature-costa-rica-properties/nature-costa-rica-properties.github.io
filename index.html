@@ -4,12 +4,39 @@
 <head>
 <style>
 <style>
+/* Galerie */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 12px;
   margin-top: 20px;
 }
+
+.gallery img {
+  width: 100%;
+  aspect-ratio: 4 / 3;   /* ← DAS ist der Schlüssel */
+  object-fit: cover;    /* schneidet statt zu strecken */
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Lightbox Overlay */
+#lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+}
+</style>
+
 
 .thumb {
   width: 100%;
@@ -47,14 +74,19 @@
 <h2>Property Gallery</h2>
 
 <div class="gallery">
-  <a href="images/hero1.jpg" target="_blank"><img src="images/hero1.jpg" class="thumb"></a>
-  <a href="images/hero2.jpg" target="_blank"><img src="images/hero2.jpg" class="thumb"></a>
-  <a href="images/hero3.jpg" target="_blank"><img src="images/hero3.jpg" class="thumb"></a>
-  <a href="images/hero4.jpg" target="_blank"><img src="images/hero4.jpg" class="thumb"></a>
-  <a href="images/hero5.jpg" target="_blank"><img src="images/hero5.jpg" class="thumb"></a>
-  <a href="images/hero6.jpg" target="_blank"><img src="images/hero6.jpg" class="thumb"></a>
-  <a href="images/hero7.jpg" target="_blank"><img src="images/hero7.jpg" class="thumb"></a>
-  <a href="images/hero8.jpg" target="_blank"><img src="images/hero8.jpg" class="thumb"></a>
+  <img src="images/hero1.jpg" onclick="openLightbox(this.src)">
+  <img src="images/hero2.jpg" onclick="openLightbox(this.src)">
+  <img src="images/hero3.jpg" onclick="openLightbox(this.src)">
+  <img src="images/hero4.jpg" onclick="openLightbox(this.src)">
+  <img src="images/hero5.jpg" onclick="openLightbox(this.src)">
+  <img src="images/hero6.jpg" onclick="openLightbox(this.src)">
+  <img src="images/hero7.jpg" onclick="openLightbox(this.src)">
+  <img src="images/hero8.jpg" onclick="openLightbox(this.src)">
+</div>
+
+<!-- Lightbox -->
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img">
 </div>
 <p>
   <a href="https://wa.me/4915752871297" target="_blank">
@@ -74,7 +106,16 @@
   WhatsApp: <a href="https://wa.me/4915752871297">Chat now</a><br>
   Email: lukasstaerk998@gmail.com
 </p>
+<script>
+function openLightbox(src) {
+  document.getElementById("lightbox-img").src = src;
+  document.getElementById("lightbox").style.display = "flex";
+}
 
+function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
+}
+</script>
 </body>
 </html>
 
