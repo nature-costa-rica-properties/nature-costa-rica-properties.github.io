@@ -2,6 +2,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <style>
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.gallery img {
+  width: 100%;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.lightbox:target {
+  display: flex;
+}
+</style>
   <meta charset="UTF-8">
   <title>Nature Costa Rica Properties</title>
   <meta name="description" content="Natural land and finca properties for sale in Costa Rica. Contact us via WhatsApp for details.">
